@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiziMove - Polityka Prywatności</title>
+    <title>FiziMove - Privacy Policy</title>
     <style>
         * {
             margin: 0;
@@ -24,6 +24,28 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-switcher button {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 8px 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #666;
+        }
+        .language-switcher button:hover {
+            background: #e0e0e0;
+        }
+        .language-switcher button.active {
+            background: #000;
+            color: white;
+            border-color: #000;
         }
         h1 {
             color: #000;
@@ -90,104 +112,394 @@
 </head>
 <body>
     <div class="container">
-        <h1>Polityka Prywatności</h1>
-        <p style="margin-bottom: 30px;">Ostatnia aktualizacja: 27 grudnia 2024</p>
+        <div class="language-switcher">
+            <button id="lang-en" onclick="switchLanguage('en')">English</button>
+            <button id="lang-pl" onclick="switchLanguage('pl')">Polski</button>
+        </div>
 
-        <h2>1. Wprowadzenie</h2>
-        <p>FiziMove ("my", "nas", "aplikacja") szanuje Twoją prywatność. Niniejsza Polityka prywatności wyjaśnia, w jaki sposób aplikacja przetwarza Twoje dane podczas korzystania z naszej aplikacji mobilnej.</p>
+        <h1 id="title">Privacy Policy</h1>
+        <p id="last-update-header" style="margin-bottom: 30px;">Last update: December 27, 2024</p>
 
-        <h2>2. Zbieranie i przechowywanie danych</h2>
-        <p>Aplikacja FiziMove zbiera i przetwarza dane w następujący sposób:</p>
-        <p><span class="bold">Dane przechowywane lokalnie:</span> Wszystkie dane wprowadzane przez Ciebie w aplikacji (poziom dyskomfortu/napięcia, historia ćwiczeń, ulubione ćwiczenia, ukończone ćwiczenia, preferencje) są przechowywane <span class="bold">wyłącznie lokalnie na Twoim urządzeniu</span> za pomocą lokalnego magazynu danych (AsyncStorage) i nie są synchronizowane z zewnętrznymi serwerami.</p>
-        <p><span class="bold">Dane zbierane przez usługi zewnętrzne:</span> Aplikacja korzysta z następujących usług zewnętrznych, które mogą zbierać dane:</p>
-        <ul>
-            <li><span class="bold">Google AdMob</span> - usługa reklamowa, która może zbierać dane techniczne urządzenia, identyfikatory reklamowe (IDFA/AAID), dane o interakcjach z reklamami oraz inne dane zgodnie z polityką prywatności Google AdMob</li>
+        <h2 id="section1-title">1. Introduction</h2>
+        <p id="section1-text">FiziMove ("we", "us", "our", "app") respects your privacy. This Privacy Policy explains how the application processes your data when you use our mobile application.</p>
+
+        <h2 id="section2-title">2. Data Collection and Storage</h2>
+        <p id="section2-text">The FiziMove application collects and processes data in the following way:</p>
+        <p id="section2-local"><span class="bold" id="section2-local-label">Data stored locally:</span> <span id="section2-local-text">All data entered by you in the application (discomfort/tension level, exercise history, favorite exercises, completed exercises, preferences) are stored exclusively locally on your device using local data storage (AsyncStorage) and are not synchronized with external servers.</span></p>
+        <p id="section2-external"><span class="bold" id="section2-external-label">Data collected by external services:</span> <span id="section2-external-text">The application uses the following external services that may collect data:</span></p>
+        <ul id="section2-list">
+            <li id="section2-admob"><span class="bold">Google AdMob</span> - <span id="section2-admob-text">advertising service that may collect device technical data, advertising identifiers (IDFA/AAID), data about ad interactions, and other data in accordance with Google AdMob privacy policy</span></li>
         </ul>
 
-        <h2>3. Szczegóły zbieranych danych</h2>
-        <p>Aplikacja nie wymaga logowania ani tworzenia konta. Nie zbieramy bezpośrednio następujących kategorii danych:</p>
-        <ul>
-            <li>Dane konta - aplikacja nie wymaga logowania ani tworzenia konta</li>
-            <li>Dane identyfikacyjne - nie zbieramy bezpośrednio adresu e-mail, imienia, nazwiska ani innych danych osobowych</li>
-            <li>Dane lokalizacyjne - aplikacja nie ma dostępu do lokalizacji</li>
+        <h2 id="section3-title">3. Details of Collected Data</h2>
+        <p id="section3-text">The application does not require login or account creation. We do not directly collect the following categories of data:</p>
+        <ul id="section3-list">
+            <li id="section3-account"><span id="section3-account-text">Account data - the application does not require login or account creation</span></li>
+            <li id="section3-identity"><span id="section3-identity-text">Identity data - we do not directly collect email address, name, surname, or other personal data</span></li>
+            <li id="section3-location"><span id="section3-location-text">Location data - the application does not have access to location</span></li>
         </ul>
-        <p><span class="bold">Uwaga:</span> Usługa zewnętrzna (Google AdMob) może zbierać dane techniczne urządzenia oraz identyfikatory reklamowe zgodnie z polityką prywatności Google.</p>
+        <p id="section3-note"><span class="bold" id="section3-note-label">Note:</span> <span id="section3-note-text">External service (Google AdMob) may collect device technical data and advertising identifiers in accordance with Google's privacy policy.</span></p>
 
-        <h2>4. Lokalne przechowywanie danych</h2>
-        <p>Wszystkie dane wprowadzane przez Ciebie w aplikacji są przechowywane wyłącznie na Twoim urządzeniu w lokalnym magazynie danych. Obejmuje to:</p>
-        <ul>
-            <li>Poziom dyskomfortu/napięcia zapisywany przez Ciebie</li>
-            <li>Historia ukończonych ćwiczeń</li>
-            <li>Lista ulubionych ćwiczeń</li>
-            <li>Preferencje personalizacji ćwiczeń</li>
+        <h2 id="section4-title">4. Local Data Storage</h2>
+        <p id="section4-text">All data entered by you in the application is stored exclusively on your device in local data storage. This includes:</p>
+        <ul id="section4-list">
+            <li id="section4-pain"><span id="section4-pain-text">Discomfort/tension level recorded by you</span></li>
+            <li id="section4-history"><span id="section4-history-text">History of completed exercises</span></li>
+            <li id="section4-favorites"><span id="section4-favorites-text">List of favorite exercises</span></li>
+            <li id="section4-preferences"><span id="section4-preferences-text">Exercise personalization preferences</span></li>
         </ul>
-        <p>Te dane są dostępne tylko dla Ciebie i nie są synchronizowane z żadnymi serwerami zewnętrznymi.</p>
+        <p id="section4-summary"><span id="section4-summary-text">This data is accessible only to you and is not synchronized with any external servers.</span></p>
 
-        <h2>5. Integracje z usługami zewnętrznymi</h2>
-        <p>Aplikacja korzysta z następujących usług zewnętrznych:</p>
-        <ul>
-            <li><span class="bold">Google AdMob</span> - wyświetlanie reklam w aplikacji. Google AdMob może zbierać dane zgodnie z polityką prywatności Google. Więcej informacji: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+        <h2 id="section5-title">5. Integrations with External Services</h2>
+        <p id="section5-text">The application uses the following external services:</p>
+        <ul id="section5-list">
+            <li id="section5-admob"><span class="bold">Google AdMob</span> - <span id="section5-admob-text"> displaying ads in the application. Google AdMob may collect data in accordance with Google's privacy policy. More information: </span><a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
         </ul>
-        <p>Aplikacja nie korzysta z Firebase, Google Analytics, RevenueCat ani innych usług analitycznych. Większość funkcji aplikacji działa w trybie offline i nie wymaga połączenia z internetem, z wyjątkiem wyświetlania reklam.</p>
+        <p id="section5-analytics"><span id="section5-analytics-text">The application does not use Firebase, Google Analytics, RevenueCat, or other analytical services. Most app features work offline and do not require an internet connection, except for displaying ads.</span></p>
 
-        <h2>6. Udostępnianie danych</h2>
-        <p><span class="bold">Dane lokalne:</span> Dane przechowywane lokalnie na Twoim urządzeniu (poziom dyskomfortu, historia ćwiczeń, ulubione ćwiczenia) nie są udostępniane stronom trzecim i pozostają wyłącznie na Twoim urządzeniu.</p>
-        <p><span class="bold">Dane z usług zewnętrznych:</span> Dane zbierane przez Google AdMob są przetwarzane zgodnie z polityką prywatności Google. Google AdMob może udostępniać dane swoim partnerom w celach wyświetlania reklam. Szczegóły dotyczące udostępniania danych znajdują się w polityce prywatności Google.</p>
-        <p>Nie sprzedajemy ani nie udostępniamy Twoich danych osobowych innym podmiotom w celach marketingowych poza tymi, które są niezbędne do działania aplikacji (wyświetlanie reklam).</p>
+        <h2 id="section6-title">6. Data Sharing</h2>
+        <p id="section6-local"><span class="bold" id="section6-local-label">Local data:</span> <span id="section6-local-text">Data stored locally on your device (discomfort level, exercise history, favorite exercises) is not shared with third parties and remains exclusively on your device.</span></p>
+        <p id="section6-external"><span class="bold" id="section6-external-label">Data from external services:</span> <span id="section6-external-text">Data collected by Google AdMob is processed in accordance with Google's privacy policy. Google AdMob may share data with its partners for ad display purposes. Details regarding data sharing can be found in Google's privacy policy.</span></p>
+        <p id="section6-marketing"><span id="section6-marketing-text">We do not sell or share your personal data with other entities for marketing purposes beyond those necessary for the application's operation (displaying ads).</span></p>
 
-        <h2>7. Usuwanie danych</h2>
-        <p>Wszystkie dane przechowywane lokalnie na Twoim urządzeniu możesz usunąć w dowolnym momencie poprzez:</p>
-        <ul>
-            <li>Odinstalowanie aplikacji - spowoduje to usunięcie wszystkich lokalnych danych</li>
-            <li>Wyczyszczenie danych aplikacji w ustawieniach urządzenia</li>
+        <h2 id="section7-title">7. Data Deletion</h2>
+        <p id="section7-text">You can delete all data stored locally on your device at any time by:</p>
+        <ul id="section7-list">
+            <li id="section7-uninstall"><span id="section7-uninstall-text">Uninstalling the application - this will delete all local data</span></li>
+            <li id="section7-cleardata"><span id="section7-cleardata-text">Clearing app data in device settings</span></li>
         </ul>
-        <p>Po usunięciu aplikacji wszystkie dane są trwale usunięte z Twojego urządzenia i nie mogą być odzyskane.</p>
+        <p id="section7-summary"><span id="section7-summary-text">After deleting the application, all data is permanently deleted from your device and cannot be recovered.</span></p>
 
-        <h2>8. Bezpieczeństwo danych</h2>
-        <p>Ponieważ wszystkie dane są przechowywane lokalnie na Twoim urządzeniu, bezpieczeństwo danych zależy od zabezpieczeń Twojego urządzenia. Zalecamy:</p>
-        <ul>
-            <li>Używanie blokady ekranu na urządzeniu</li>
-            <li>Regularne aktualizowanie systemu operacyjnego</li>
-            <li>Nie udostępnianie urządzenia osobom nieupoważnionym</li>
-        </ul>
-
-        <h2>9. Pliki cookies i technologie śledzące</h2>
-        <p>Aplikacja nie wykorzystuje bezpośrednio plików cookies. Jednak usługi zewnętrzne (Google AdMob) mogą używać technologii śledzących do wyświetlania spersonalizowanych reklam. Google AdMob może używać identyfikatorów reklamowych (IDFA na iOS, AAID na Android) oraz innych technologii zgodnie z polityką prywatności Google.</p>
-        <p>Możesz kontrolować spersonalizowane reklamy w ustawieniach swojego urządzenia (iOS: Ustawienia → Prywatność → Reklamy, Android: Ustawienia → Google → Reklamy).</p>
-
-        <h2>10. Zmiany w polityce prywatności</h2>
-        <p>Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej Polityce prywatności. O wszelkich istotnych zmianach będziemy informować użytkowników poprzez aktualizację aplikacji. Kontynuowanie korzystania z aplikacji po wprowadzeniu zmian oznacza akceptację nowej polityki.</p>
-
-        <h2>11. Dane dotyczące samopoczucia</h2>
-        <p>Wszystkie dane dotyczące samopoczucia wprowadzane przez Ciebie w aplikacji (poziom dyskomfortu/napięcia, historia ćwiczeń) są przechowywane wyłącznie lokalnie na Twoim urządzeniu. Nie są one przesyłane ani przechowywane na żadnych serwerach zewnętrznych. Masz pełną kontrolę nad tymi danymi i możesz je usunąć w dowolnym momencie.</p>
-
-        <h2>12. Zgodność z wymaganiami Apple App Store i Google Play</h2>
-        <p>Aplikacja jest zgodna z wytycznymi Apple App Store i Google Play dotyczącymi prywatności użytkowników. Informujemy użytkowników o zbieraniu danych przez usługę zewnętrzną (Google AdMob) zgodnie z wymaganiami obu sklepów. Polityka prywatności jest dostępna w aplikacji oraz online na tej stronie.</p>
-        <p>W App Store Connect i Google Play Console deklarujemy zbieranie następujących kategorii danych przez usługę zewnętrzną:</p>
-        <ul>
-            <li>Dane identyfikacyjne urządzenia (IDFA/AAID) - przez Google AdMob</li>
-            <li>Dane techniczne urządzenia - przez Google AdMob</li>
+        <h2 id="section8-title">8. Data Security</h2>
+        <p id="section8-text">Since all data is stored locally on your device, data security depends on your device's security. We recommend:</p>
+        <ul id="section8-list">
+            <li id="section8-lock"><span id="section8-lock-text">Using a screen lock on your device</span></li>
+            <li id="section8-update"><span id="section8-update-text">Regularly updating the operating system</span></li>
+            <li id="section8-share"><span id="section8-share-text">Not sharing the device with unauthorized persons</span></li>
         </ul>
 
-        <h2>13. Prawa użytkownika (RODO/GDPR)</h2>
-        <p>Zgodnie z Rozporządzeniem Ogólnym o Ochronie Danych (RODO), masz następujące prawa:</p>
-        <ul>
-            <li><span class="bold">Prawo dostępu</span> - możesz sprawdzić, jakie dane są przechowywane lokalnie na Twoim urządzeniu (dostępne w ustawieniach aplikacji)</li>
-            <li><span class="bold">Prawo do usunięcia</span> - możesz usunąć wszystkie dane lokalne poprzez odinstalowanie aplikacji lub wyczyszczenie danych aplikacji w ustawieniach urządzenia</li>
-            <li><span class="bold">Prawo do sprzeciwu</span> - możesz wyłączyć spersonalizowane reklamy w ustawieniach urządzenia</li>
-            <li><span class="bold">Prawo do przenoszenia danych</span> - dane lokalne są przechowywane na Twoim urządzeniu i możesz je eksportować poprzez kopię zapasową urządzenia</li>
-        </ul>
-        <p>W przypadku danych zbieranych przez Google AdMob, możesz skontaktować się bezpośrednio z Google zgodnie z polityką prywatności Google.</p>
+        <h2 id="section9-title">9. Cookies and Tracking Technologies</h2>
+        <p id="section9-text"><span id="section9-text-content">The application does not directly use cookies. However, external services (Google AdMob) may use tracking technologies to display personalized ads. Google AdMob may use advertising identifiers (IDFA on iOS, AAID on Android) and other technologies in accordance with Google's privacy policy.</span></p>
+        <p id="section9-control"><span id="section9-control-text">You can control personalized ads in your device settings (iOS: Settings → Privacy → Ads, Android: Settings → Google → Ads).</span></p>
 
-        <h2>14. Kontakt</h2>
-        <p>W przypadku pytań dotyczących niniejszej Polityki prywatności, możesz skontaktować się z nami:</p>
-        <ul>
-            <li>E-mail: <a href="mailto:contact.fizi.app@gmail.com">contact.fizi.app@gmail.com</a></li>
-            <li>Poprzez aplikację</li>
+        <h2 id="section10-title">10. Changes to Privacy Policy</h2>
+        <p id="section10-text"><span id="section10-text-content">We reserve the right to verify this Privacy Policy. We will inform users about any significant changes by updating the application. Continuing to use the application after changes are introduced means accepting the new policy.</span></p>
+
+        <h2 id="section11-title">11. Wellbeing Data</h2>
+        <p id="section11-text"><span id="section11-text-content">All wellbeing data entered by you in the application (discomfort/tension level, exercise history) is stored exclusively locally on your device. It is not transmitted or stored on any external servers. You have full control over this data and can delete it at any time.</span></p>
+
+        <h2 id="section12-title">12. Compliance with Apple App Store and Google Play Requirements</h2>
+        <p id="section12-text"><span id="section12-text-content">The application complies with Apple App Store and Google Play guidelines regarding user privacy. We inform users about data collection by external service (Google AdMob) in accordance with the requirements of both stores. The privacy policy is available in the application and online on this page.</span></p>
+        <p id="section12-declaration"><span id="section12-declaration-text">In App Store Connect and Google Play Console, we declare the collection of the following data categories by external service:</span></p>
+        <ul id="section12-list">
+            <li id="section12-idfa"><span id="section12-idfa-text">Device identifiers (IDFA/AAID) - by Google AdMob</span></li>
+            <li id="section12-tech"><span id="section12-tech-text">Device technical data - by Google AdMob</span></li>
         </ul>
 
-        <p class="last-updated">Ostatnia aktualizacja: 27 grudnia 2024</p>
+        <h2 id="section13-title">13. User Rights (GDPR)</h2>
+        <p id="section13-text"><span id="section13-text-content">In accordance with the General Data Protection Regulation (GDPR), you have the following rights:</span></p>
+        <ul id="section13-list">
+            <li id="section13-access"><span class="bold" id="section13-access-label">Right of access</span> - <span id="section13-access-text">you can check what data is stored locally on your device (available in app settings)</span></li>
+            <li id="section13-deletion"><span class="bold" id="section13-deletion-label">Right to erasure</span> - <span id="section13-deletion-text">you can delete all local data by uninstalling the application or clearing app data in device settings</span></li>
+            <li id="section13-objection"><span class="bold" id="section13-objection-label">Right to object</span> - <span id="section13-objection-text">you can disable personalized ads in device settings</span></li>
+            <li id="section13-portability"><span class="bold" id="section13-portability-label">Right to data portability</span> - <span id="section13-portability-text">local data is stored on your device and can be exported via device backup</span></li>
+        </ul>
+        <p id="section13-contact"><span id="section13-contact-text">In the case of data collected by Google AdMob, you can contact Google directly in accordance with Google's privacy policy.</span></p>
+
+        <h2 id="section14-title">14. Contact</h2>
+        <p id="section14-text"><span id="section14-text-content">If you have questions regarding this Privacy Policy, you can contact us:</span></p>
+        <ul id="section14-list">
+            <li id="section14-email"><span id="section14-email-label">Email:</span> <a href="mailto:contact.fizi.app@gmail.com">contact.fizi.app@gmail.com</a></li>
+            <li id="section14-app"><span id="section14-app-text">Via the application</span></li>
+        </ul>
+
+        <p class="last-updated" id="last-updated">Last update: December 27, 2024</p>
     </div>
+
+    <script>
+        const translations = {
+            en: {
+                title: "Privacy Policy",
+                lastUpdateHeader: "Last update: December 27, 2024",
+                section1Title: "1. Introduction",
+                section1Text: 'FiziMove ("we", "us", "our", "app") respects your privacy. This Privacy Policy explains how the application processes your data when you use our mobile application.',
+                section2Title: "2. Data Collection and Storage",
+                section2Text: "The FiziMove application collects and processes data in the following way:",
+                section2LocalLabel: "Data stored locally:",
+                section2LocalText: "All data entered by you in the application (discomfort/tension level, exercise history, favorite exercises, completed exercises, preferences) are stored exclusively locally on your device using local data storage (AsyncStorage) and are not synchronized with external servers.",
+                section2ExternalLabel: "Data collected by external services:",
+                section2ExternalText: "The application uses the following external services that may collect data:",
+                section2AdmobText: "advertising service that may collect device technical data, advertising identifiers (IDFA/AAID), data about ad interactions, and other data in accordance with Google AdMob privacy policy",
+                section3Title: "3. Details of Collected Data",
+                section3Text: "The application does not require login or account creation. We do not directly collect the following categories of data:",
+                section3AccountText: "Account data - the application does not require login or account creation",
+                section3IdentityText: "Identity data - we do not directly collect email address, name, surname, or other personal data",
+                section3LocationText: "Location data - the application does not have access to location",
+                section3NoteLabel: "Note:",
+                section3NoteText: "External service (Google AdMob) may collect device technical data and advertising identifiers in accordance with Google's privacy policy.",
+                section4Title: "4. Local Data Storage",
+                section4Text: "All data entered by you in the application is stored exclusively on your device in local data storage. This includes:",
+                section4PainText: "Discomfort/tension level recorded by you",
+                section4HistoryText: "History of completed exercises",
+                section4FavoritesText: "List of favorite exercises",
+                section4PreferencesText: "Exercise personalization preferences",
+                section4SummaryText: "This data is accessible only to you and is not synchronized with any external servers.",
+                section5Title: "5. Integrations with External Services",
+                section5Text: "The application uses the following external services:",
+                section5AdmobText: " displaying ads in the application. Google AdMob may collect data in accordance with Google's privacy policy. More information: ",
+                section5AnalyticsText: "The application does not use Firebase, Google Analytics, RevenueCat, or other analytical services. Most app features work offline and do not require an internet connection, except for displaying ads.",
+                section6Title: "6. Data Sharing",
+                section6LocalLabel: "Local data:",
+                section6LocalText: "Data stored locally on your device (discomfort level, exercise history, favorite exercises) is not shared with third parties and remains exclusively on your device.",
+                section6ExternalLabel: "Data from external services:",
+                section6ExternalText: "Data collected by Google AdMob is processed in accordance with Google's privacy policy. Google AdMob may share data with its partners for ad display purposes. Details regarding data sharing can be found in Google's privacy policy.",
+                section6MarketingText: "We do not sell or share your personal data with other entities for marketing purposes beyond those necessary for the application's operation (displaying ads).",
+                section7Title: "7. Data Deletion",
+                section7Text: "You can delete all data stored locally on your device at any time by:",
+                section7UninstallText: "Uninstalling the application - this will delete all local data",
+                section7CleardataText: "Clearing app data in device settings",
+                section7SummaryText: "After deleting the application, all data is permanently deleted from your device and cannot be recovered.",
+                section8Title: "8. Data Security",
+                section8Text: "Since all data is stored locally on your device, data security depends on your device's security. We recommend:",
+                section8LockText: "Using a screen lock on your device",
+                section8UpdateText: "Regularly updating the operating system",
+                section8ShareText: "Not sharing the device with unauthorized persons",
+                section9Title: "9. Cookies and Tracking Technologies",
+                section9TextContent: "The application does not directly use cookies. However, external services (Google AdMob) may use tracking technologies to display personalized ads. Google AdMob may use advertising identifiers (IDFA on iOS, AAID on Android) and other technologies in accordance with Google's privacy policy.",
+                section9ControlText: "You can control personalized ads in your device settings (iOS: Settings → Privacy → Ads, Android: Settings → Google → Ads).",
+                section10Title: "10. Changes to Privacy Policy",
+                section10TextContent: "We reserve the right to verify this Privacy Policy. We will inform users about any significant changes by updating the application. Continuing to use the application after changes are introduced means accepting the new policy.",
+                section11Title: "11. Wellbeing Data",
+                section11TextContent: "All wellbeing data entered by you in the application (discomfort/tension level, exercise history) is stored exclusively locally on your device. It is not transmitted or stored on any external servers. You have full control over this data and can delete it at any time.",
+                section12Title: "12. Compliance with Apple App Store and Google Play Requirements",
+                section12TextContent: "The application complies with Apple App Store and Google Play guidelines regarding user privacy. We inform users about data collection by external service (Google AdMob) in accordance with the requirements of both stores. The privacy policy is available in the application and online on this page.",
+                section12DeclarationText: "In App Store Connect and Google Play Console, we declare the collection of the following data categories by external service:",
+                section12IdfaText: "Device identifiers (IDFA/AAID) - by Google AdMob",
+                section12TechText: "Device technical data - by Google AdMob",
+                section13Title: "13. User Rights (GDPR)",
+                section13TextContent: "In accordance with the General Data Protection Regulation (GDPR), you have the following rights:",
+                section13AccessLabel: "Right of access",
+                section13AccessText: "you can check what data is stored locally on your device (available in app settings)",
+                section13DeletionLabel: "Right to erasure",
+                section13DeletionText: "you can delete all local data by uninstalling the application or clearing app data in device settings",
+                section13ObjectionLabel: "Right to object",
+                section13ObjectionText: "you can disable personalized ads in device settings",
+                section13PortabilityLabel: "Right to data portability",
+                section13PortabilityText: "local data is stored on your device and can be exported via device backup",
+                section13ContactText: "In the case of data collected by Google AdMob, you can contact Google directly in accordance with Google's privacy policy.",
+                section14Title: "14. Contact",
+                section14TextContent: "If you have questions regarding this Privacy Policy, you can contact us:",
+                section14EmailLabel: "Email:",
+                section14AppText: "Via the application",
+                lastUpdated: "Last update: December 27, 2024"
+            },
+            pl: {
+                title: "Polityka prywatności",
+                lastUpdateHeader: "Ostatnia aktualizacja: 27 grudnia 2024",
+                section1Title: "1. Wprowadzenie",
+                section1Text: 'FiziMove ("my", "nas", "aplikacja") szanuje Twoją prywatność. Niniejsza Polityka prywatności wyjaśnia, w jaki sposób aplikacja przetwarza Twoje dane podczas korzystania z naszej aplikacji mobilnej.',
+                section2Title: "2. Zbieranie i przechowywanie danych",
+                section2Text: "Aplikacja FiziMove zbiera i przetwarza dane w następujący sposób:",
+                section2LocalLabel: "Dane przechowywane lokalnie:",
+                section2LocalText: "Wszystkie dane wprowadzane przez Ciebie w aplikacji (poziom dyskomfortu/napięcia, historia ćwiczeń, ulubione ćwiczenia, ukończone ćwiczenia, preferencje) są przechowywane wyłącznie lokalnie na Twoim urządzeniu za pomocą lokalnego magazynu danych (AsyncStorage) i nie są synchronizowane z zewnętrznymi serwerami.",
+                section2ExternalLabel: "Dane zbierane przez usługi zewnętrzne:",
+                section2ExternalText: "Aplikacja korzysta z następujących usług zewnętrznych, które mogą zbierać dane:",
+                section2AdmobText: "usługa reklamowa, która może zbierać dane techniczne urządzenia, identyfikatory reklamowe (IDFA/AAID), dane o interakcjach z reklamami oraz inne dane zgodnie z polityką prywatności Google AdMob",
+                section3Title: "3. Szczegóły zbieranych danych",
+                section3Text: "Aplikacja nie wymaga logowania ani tworzenia konta. Nie zbieramy bezpośrednio następujących kategorii danych:",
+                section3AccountText: "Dane konta - aplikacja nie wymaga logowania ani tworzenia konta",
+                section3IdentityText: "Dane identyfikacyjne - nie zbieramy bezpośrednio adresu e-mail, imienia, nazwiska ani innych danych osobowych",
+                section3LocationText: "Dane lokalizacyjne - aplikacja nie ma dostępu do lokalizacji",
+                section3NoteLabel: "Uwaga:",
+                section3NoteText: "Usługa zewnętrzna (Google AdMob) może zbierać dane techniczne urządzenia oraz identyfikatory reklamowe zgodnie z polityką prywatności Google.",
+                section4Title: "4. Lokalne przechowywanie danych",
+                section4Text: "Wszystkie dane wprowadzane przez Ciebie w aplikacji są przechowywane wyłącznie na Twoim urządzeniu w lokalnym magazynie danych. Obejmuje to:",
+                section4PainText: "Poziom dyskomfortu/napięcia zapisywany przez Ciebie",
+                section4HistoryText: "Historia ukończonych ćwiczeń",
+                section4FavoritesText: "Lista ulubionych ćwiczeń",
+                section4PreferencesText: "Preferencje personalizacji ćwiczeń",
+                section4SummaryText: "Te dane są dostępne tylko dla Ciebie i nie są synchronizowane z żadnymi serwerami zewnętrznymi.",
+                section5Title: "5. Integracje z usługami zewnętrznymi",
+                section5Text: "Aplikacja korzysta z następujących usług zewnętrznych:",
+                section5AdmobText: " wyświetlanie reklam w aplikacji. Google AdMob może zbierać dane zgodnie z polityką prywatności Google. Więcej informacji: ",
+                section5AnalyticsText: "Aplikacja nie korzysta z Firebase, Google Analytics, RevenueCat ani innych usług analitycznych. Większość funkcji aplikacji działa w trybie offline i nie wymaga połączenia z internetem, z wyjątkiem wyświetlania reklam.",
+                section6Title: "6. Udostępnianie danych",
+                section6LocalLabel: "Dane lokalne:",
+                section6LocalText: "Dane przechowywane lokalnie na Twoim urządzeniu (poziom dyskomfortu, historia ćwiczeń, ulubione ćwiczenia) nie są udostępniane stronom trzecim i pozostają wyłącznie na Twoim urządzeniu.",
+                section6ExternalLabel: "Dane z usług zewnętrznych:",
+                section6ExternalText: "Dane zbierane przez Google AdMob są przetwarzane zgodnie z polityką prywatności Google. Google AdMob może udostępniać dane swoim partnerom w celach wyświetlania reklam. Szczegóły dotyczące udostępniania danych znajdują się w polityce prywatności Google.",
+                section6MarketingText: "Nie sprzedajemy ani nie udostępniamy Twoich danych osobowych innym podmiotom w celach marketingowych poza tymi, które są niezbędne do działania aplikacji (wyświetlanie reklam).",
+                section7Title: "7. Usuwanie danych",
+                section7Text: "Wszystkie dane przechowywane lokalnie na Twoim urządzeniu możesz usunąć w dowolnym momencie poprzez:",
+                section7UninstallText: "Odinstalowanie aplikacji - spowoduje to usunięcie wszystkich lokalnych danych",
+                section7CleardataText: "Wyczyszczenie danych aplikacji w ustawieniach urządzenia",
+                section7SummaryText: "Po usunięciu aplikacji wszystkie dane są trwale usunięte z Twojego urządzenia i nie mogą być odzyskane.",
+                section8Title: "8. Bezpieczeństwo danych",
+                section8Text: "Ponieważ wszystkie dane są przechowywane lokalnie na Twoim urządzeniu, bezpieczeństwo danych zależy od zabezpieczeń Twojego urządzenia. Zalecamy:",
+                section8LockText: "Używanie blokady ekranu na urządzeniu",
+                section8UpdateText: "Regularne aktualizowanie systemu operacyjnego",
+                section8ShareText: "Nie udostępnianie urządzenia osobom nieupoważnionym",
+                section9Title: "9. Pliki cookies i technologie śledzące",
+                section9TextContent: "Aplikacja nie wykorzystuje bezpośrednio plików cookies. Jednak usługi zewnętrzne (Google AdMob) mogą używać technologii śledzących do wyświetlania spersonalizowanych reklam. Google AdMob może używać identyfikatorów reklamowych (IDFA na iOS, AAID na Android) oraz innych technologii zgodnie z polityką prywatności Google.",
+                section9ControlText: "Możesz kontrolować spersonalizowane reklamy w ustawieniach swojego urządzenia (iOS: Ustawienia → Prywatność → Reklamy, Android: Ustawienia → Google → Reklamy).",
+                section10Title: "10. Zmiany w polityce prywatności",
+                section10TextContent: "Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej Polityce prywatności. O wszelkich istotnych zmianach będziemy informować użytkowników poprzez aktualizację aplikacji. Kontynuowanie korzystania z aplikacji po wprowadzeniu zmian oznacza akceptację nowej polityki.",
+                section11Title: "11. Dane dotyczące samopoczucia",
+                section11TextContent: "Wszystkie dane dotyczące samopoczucia wprowadzane przez Ciebie w aplikacji (poziom dyskomfortu/napięcia, historia ćwiczeń) są przechowywane wyłącznie lokalnie na Twoim urządzeniu. Nie są one przesyłane ani przechowywane na żadnych serwerach zewnętrznych. Masz pełną kontrolę nad tymi danymi i możesz je usunąć w dowolnym momencie.",
+                section12Title: "12. Zgodność z wymaganiami Apple App Store i Google Play",
+                section12TextContent: "Aplikacja jest zgodna z wytycznymi Apple App Store i Google Play dotyczącymi prywatności użytkowników. Informujemy użytkowników o zbieraniu danych przez usługę zewnętrzną (Google AdMob) zgodnie z wymaganiami obu sklepów. Polityka prywatności jest dostępna w aplikacji oraz online na tej stronie.",
+                section12DeclarationText: "W App Store Connect i Google Play Console deklarujemy zbieranie następujących kategorii danych przez usługę zewnętrzną:",
+                section12IdfaText: "Dane identyfikacyjne urządzenia (IDFA/AAID) - przez Google AdMob",
+                section12TechText: "Dane techniczne urządzenia - przez Google AdMob",
+                section13Title: "13. Prawa użytkownika (RODO/GDPR)",
+                section13TextContent: "Zgodnie z Rozporządzeniem Ogólnym o Ochronie Danych (RODO), masz następujące prawa:",
+                section13AccessLabel: "Prawo dostępu",
+                section13AccessText: "możesz sprawdzić, jakie dane są przechowywane lokalnie na Twoim urządzeniu (dostępne w ustawieniach aplikacji)",
+                section13DeletionLabel: "Prawo do usunięcia",
+                section13DeletionText: "możesz usunąć wszystkie dane lokalne poprzez odinstalowanie aplikacji lub wyczyszczenie danych aplikacji w ustawieniach urządzenia",
+                section13ObjectionLabel: "Prawo do sprzeciwu",
+                section13ObjectionText: "możesz wyłączyć spersonalizowane reklamy w ustawieniach urządzenia",
+                section13PortabilityLabel: "Prawo do przenoszenia danych",
+                section13PortabilityText: "dane lokalne są przechowywane na Twoim urządzeniu i możesz je eksportować poprzez kopię zapasową urządzenia",
+                section13ContactText: "W przypadku danych zbieranych przez Google AdMob, możesz skontaktować się bezpośrednio z Google zgodnie z polityką prywatności Google.",
+                section14Title: "14. Kontakt",
+                section14TextContent: "W przypadku pytań dotyczących niniejszej Polityki prywatności, możesz skontaktować się z nami:",
+                section14EmailLabel: "E-mail:",
+                section14AppText: "Poprzez aplikację",
+                lastUpdated: "Ostatnia aktualizacja: 27 grudnia 2024"
+            }
+        };
+
+        function detectLanguage() {
+            // Check localStorage first
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && (savedLang === 'en' || savedLang === 'pl')) {
+                return savedLang;
+            }
+            
+            // Detect from browser language
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.toLowerCase().split('-')[0];
+            
+            // Default to Polish if browser language is Polish, otherwise English
+            return langCode === 'pl' ? 'pl' : 'en';
+        }
+
+        function switchLanguage(lang) {
+            if (lang !== 'en' && lang !== 'pl') return;
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update title
+            document.title = lang === 'pl' ? 'FiziMove - Polityka Prywatności' : 'FiziMove - Privacy Policy';
+            
+            // Get translations
+            const t = translations[lang];
+            
+            // Update all text content
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('last-update-header').textContent = t.lastUpdateHeader;
+            
+            document.getElementById('section1-title').textContent = t.section1Title;
+            document.getElementById('section1-text').textContent = t.section1Text;
+            
+            document.getElementById('section2-title').textContent = t.section2Title;
+            document.getElementById('section2-text').textContent = t.section2Text;
+            document.getElementById('section2-local-label').textContent = t.section2LocalLabel;
+            document.getElementById('section2-local-text').textContent = t.section2LocalText;
+            document.getElementById('section2-external-label').textContent = t.section2ExternalLabel;
+            document.getElementById('section2-external-text').textContent = t.section2ExternalText;
+            document.getElementById('section2-admob-text').textContent = t.section2AdmobText;
+            
+            document.getElementById('section3-title').textContent = t.section3Title;
+            document.getElementById('section3-text').textContent = t.section3Text;
+            document.getElementById('section3-account-text').textContent = t.section3AccountText;
+            document.getElementById('section3-identity-text').textContent = t.section3IdentityText;
+            document.getElementById('section3-location-text').textContent = t.section3LocationText;
+            document.getElementById('section3-note-label').textContent = t.section3NoteLabel;
+            document.getElementById('section3-note-text').textContent = t.section3NoteText;
+            
+            document.getElementById('section4-title').textContent = t.section4Title;
+            document.getElementById('section4-text').textContent = t.section4Text;
+            document.getElementById('section4-pain-text').textContent = t.section4PainText;
+            document.getElementById('section4-history-text').textContent = t.section4HistoryText;
+            document.getElementById('section4-favorites-text').textContent = t.section4FavoritesText;
+            document.getElementById('section4-preferences-text').textContent = t.section4PreferencesText;
+            document.getElementById('section4-summary-text').textContent = t.section4SummaryText;
+            
+            document.getElementById('section5-title').textContent = t.section5Title;
+            document.getElementById('section5-text').textContent = t.section5Text;
+            document.getElementById('section5-admob-text').textContent = t.section5AdmobText;
+            document.getElementById('section5-analytics-text').textContent = t.section5AnalyticsText;
+            
+            document.getElementById('section6-title').textContent = t.section6Title;
+            document.getElementById('section6-local-label').textContent = t.section6LocalLabel;
+            document.getElementById('section6-local-text').textContent = t.section6LocalText;
+            document.getElementById('section6-external-label').textContent = t.section6ExternalLabel;
+            document.getElementById('section6-external-text').textContent = t.section6ExternalText;
+            document.getElementById('section6-marketing-text').textContent = t.section6MarketingText;
+            
+            document.getElementById('section7-title').textContent = t.section7Title;
+            document.getElementById('section7-text').textContent = t.section7Text;
+            document.getElementById('section7-uninstall-text').textContent = t.section7UninstallText;
+            document.getElementById('section7-cleardata-text').textContent = t.section7CleardataText;
+            document.getElementById('section7-summary-text').textContent = t.section7SummaryText;
+            
+            document.getElementById('section8-title').textContent = t.section8Title;
+            document.getElementById('section8-text').textContent = t.section8Text;
+            document.getElementById('section8-lock-text').textContent = t.section8LockText;
+            document.getElementById('section8-update-text').textContent = t.section8UpdateText;
+            document.getElementById('section8-share-text').textContent = t.section8ShareText;
+            
+            document.getElementById('section9-title').textContent = t.section9Title;
+            document.getElementById('section9-text-content').textContent = t.section9TextContent;
+            document.getElementById('section9-control-text').textContent = t.section9ControlText;
+            
+            document.getElementById('section10-title').textContent = t.section10Title;
+            document.getElementById('section10-text-content').textContent = t.section10TextContent;
+            
+            document.getElementById('section11-title').textContent = t.section11Title;
+            document.getElementById('section11-text-content').textContent = t.section11TextContent;
+            
+            document.getElementById('section12-title').textContent = t.section12Title;
+            document.getElementById('section12-text-content').textContent = t.section12TextContent;
+            document.getElementById('section12-declaration-text').textContent = t.section12DeclarationText;
+            document.getElementById('section12-idfa-text').textContent = t.section12IdfaText;
+            document.getElementById('section12-tech-text').textContent = t.section12TechText;
+            
+            document.getElementById('section13-title').textContent = t.section13Title;
+            document.getElementById('section13-text-content').textContent = t.section13TextContent;
+            document.getElementById('section13-access-label').textContent = t.section13AccessLabel;
+            document.getElementById('section13-access-text').textContent = t.section13AccessText;
+            document.getElementById('section13-deletion-label').textContent = t.section13DeletionLabel;
+            document.getElementById('section13-deletion-text').textContent = t.section13DeletionText;
+            document.getElementById('section13-objection-label').textContent = t.section13ObjectionLabel;
+            document.getElementById('section13-objection-text').textContent = t.section13ObjectionText;
+            document.getElementById('section13-portability-label').textContent = t.section13PortabilityLabel;
+            document.getElementById('section13-portability-text').textContent = t.section13PortabilityText;
+            document.getElementById('section13-contact-text').textContent = t.section13ContactText;
+            
+            document.getElementById('section14-title').textContent = t.section14Title;
+            document.getElementById('section14-text-content').textContent = t.section14TextContent;
+            document.getElementById('section14-email-label').textContent = t.section14EmailLabel;
+            document.getElementById('section14-app-text').textContent = t.section14AppText;
+            
+            document.getElementById('last-updated').textContent = t.lastUpdated;
+            
+            // Update active button
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-pl').classList.toggle('active', lang === 'pl');
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const lang = detectLanguage();
+            switchLanguage(lang);
+        });
+    </script>
 </body>
 </html>
-
